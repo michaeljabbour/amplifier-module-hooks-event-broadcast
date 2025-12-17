@@ -1,0 +1,36 @@
+[project]
+name = "amplifier-module-hooks-event-broadcast"
+version = "0.1.0"
+description = "Transport-agnostic event broadcast hook for Amplifier - enables real-time UI updates via capability injection"
+requires-python = ">=3.11"
+authors = [
+    { name = "MJ" },
+]
+dependencies = [
+    "amplifier-core",
+]
+
+[project.entry-points."amplifier.modules"]
+hooks-event-broadcast = "amplifier_module_hooks_event_broadcast:mount"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+package = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["amplifier_module_hooks_event_broadcast"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+]
+
+[tool.uv.sources]
+amplifier-core = { git = "https://github.com/microsoft/amplifier-core", branch = "main" }
