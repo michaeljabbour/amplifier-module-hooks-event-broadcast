@@ -145,3 +145,6 @@ session.coordinator.register_capability("broadcast", console_broadcast)
 ## License
 
 MIT
+
+
+MIT License - See LICENSE file
